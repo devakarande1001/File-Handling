@@ -1,0 +1,70 @@
+"""
+#### Read operations ####
+'r' read mode is default mode in file handling
+read()
+readline()
+readlines()
+"""
+f = open('c.txt')#if u dnt specify 'r' mode here , its default
+#print(f.readable())
+#print(f.read())
+"""
+data = f.read()
+for i in data:
+    print(i,end=' ')
+----------------------
+print(f.read(16))
+print(f.read(10))
+print(f.read())
+-------------------------
+#print(len(f.read()))
+for i in range(14):
+    print(f.read(5))
+------------------------
+## realine(): reads one line at a time/line by line reading operation
+--------------------------------------------
+
+#print(f.readline())
+#print(f.readline())
+#print(f.readline())
+############################
+#for i in range(3):
+    #print(f.readline())
+#############################
+#for i in f.readline():
+    #print(i)
+#print(f.readline().upper())#class str
+#####################################
+#print(f.readline(5))#read 1st 5 chars
+
+#read last 5
+print(f.readline()[-6:-1:])
+
+# read 1st line and reverse words
+#print(f.readline().split()[::-1])
+---------------------------------------------
+readlines()
+-----------------------------
+#print(type(f.readlines()))#list of string
+for i in f.readlines():
+    print(type(i))
+---------------------------------
+#print(f.readlines(19))
+#print(len(f.readlines(1)))
+#print(len(f.readline()))
+print(len(f.readlines()))
+----------------------------
+How to read and write binary file?
+
+"""
+f2 = open('ab.jpg','r+b')
+#print(f)
+#print(f2.read())
+
+f3 = open('new.jpg','w+b')
+#f3.write(f2.readl)
+#print(f2.readlines())
+f3.write(f2.read())
+
+
+

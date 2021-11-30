@@ -1,0 +1,116 @@
+"""
+File handling:
+When we want to store the data permanently on the drive then we need a file
+It deals with 2 types of files:
+    1. txt
+    2. bin/image
+
+Operations on file:
+1. Create
+2. Open
+3. Write
+4. Read
+5. Close
+
+Properties of file:
+name
+mode: read/write/append
+is it readable?
+is it writable ?
+is it closed?
+---------------------------------------------------
+1. Creation of a file:
+we have to use open()
+---------------------------
+Mode:
+ ========= ===============================================================
+    Character Meaning
+    --------- ---------------------------------------------------------------
+    'r'       open for reading (default)
+    'w'       open for writing, truncating the file first
+    'x'       create a new file and open it for writing
+    'a'       open for writing, appending to the end of the file if it exists
+    'b'       binary mode
+    't'       text mode (default)
+    '+'       open a disk file for updating (reading and writing)
+-----------------------------------------------------------------
+a. Creation of a file using 'w' mode
+---------------------------
+open('a.txt','w')
+# it truncates file every time u execute it
+#meaning is, it will remove the previously present text
+---------------------------------------------------
+b. creating a file using 'a' mode/append mode
+----------------------------------
+open('b.txt',mode='a')
+# it is used to add contents at the end of file
+# if file present then it wont create a new file
+# if it is not present then it will create that file
+-------------------------------
+c. creating a file using 'x' mode/exclusive mode
+ create a new file and open it for writing
+ --------
+ if file is already present then we can not create it.
+ if we try to do so, it wil give u fileExistError
+
+Hence, we can create a file only once using 'x' mode.
+-----------------
+open('d.txt',mode='x')
+---------------------------------------------------
+####### Write operation on file ##########
+
+f = open('a.txt','w')
+#f is know as handle
+# how to check the properties of the file?
+print(f.name)
+print(f.mode)
+print(f.readable())#bool op
+print(f.writable())#bool op
+print('Is file closed?:-',f.closed)
+# close?
+f.close()
+print('Is file closed?:-',f.closed)
+-----------------------Write operations------------------------------
+
+f = open('a.txt','w')
+#f.write('##########\t#############')
+#default write does concatenation
+#f.write('\n*****************')
+###############################
+#f.write('########\n*******\n8758787')
+###############################
+#f.writelines(['This is sample file','\nWrite operation'])
+----------------Write using : append mode-----------------------
+it append the contents to the end always
+--------------------------------
+f = open('a.txt','a')
+f.write('Hello Python\nHow r u')
+f.write('\n')
+-----------------Write operation using: x mode-----------------
+
+f = open('e.txt','x')
+f.write('A file with x mode\nNew contents added....')
+"""
+
+class Sample:
+    def m1(self,a=None,b=None,c=None):
+        if (a!=None and c!=None):
+            print(a,c)
+        elif (a!=None and b!=None):
+            print(a,b,c)
+        else:
+            print(a,b,c)
+
+s  = Sample()
+s.m1(a = 10,c=34)
+s.m1()
+s.m1(a=300,b = 600)
+
+
+
+
+
+
+
+
+

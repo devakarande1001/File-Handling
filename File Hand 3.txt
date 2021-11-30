@@ -1,0 +1,66 @@
+"""
+Suppose if i want to check,file is present or not
+----------------------------------------------
+import os
+print(os.path.isfile('sample.txt'))
+--------------------------------------------
+
+f = open('sample.tsv','r')
+print(f.read())
+# .csv .tsv==> csv
+# .xlsx ==> openpyxl, xlrd,xlwt
+----------------------------------------
+
+
+
+# Auto closing of a file
+#f = open('sample.tsv','r')   here we have to explicitly close file
+with open('sample.tsv','r') as f:
+    print('inside with:',f.closed)
+
+print('outside with:',f.closed)
+----------------------------------------------------
+# we need to fetch a particular thing from a file
+# and want to write those contents to other file
+----------------------------------------------
+with open('sample.tsv') as f:
+    #print(f.read())
+    data = f.read()
+
+with open('e.txt','w') as f2:
+    #print(data)
+    f2.write(data)
+----------------------------------------------------
+# want to read only age data
+23 and 45 and write it in another file
+"""
+#with open('n.txt','w') as f2:
+#    pass
+#f2 = open('n.txt','w')
+
+with open('e.txt') as f:
+    #print(f.read().split())
+    with open('n.txt','w') as f2:
+
+        for val in f.read().split():
+            #print(val)
+            if val.isdigit()==True:
+                #f2.writelines([val,'\t'])
+                f2.write(val)
+                f2.write('\t')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
